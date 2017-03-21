@@ -10,19 +10,21 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/quiz_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginBottom="@dimen/medium_margin"
+            android:layout_marginTop="@dimen/medium_margin"
             android:text="@string/quiz_title"
             android:textColor="#212121"
-            android:textSize="24sp" />
+            android:textSize="@dimen/big_txt_size" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/cardViewQuestion1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            style="@style/CardViewStyle">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -49,7 +51,8 @@
         <android.support.v7.widget.CardView
             android:id="@+id/cardViewQuestion2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            style="@style/CardViewStyle">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -99,7 +102,8 @@
         <android.support.v7.widget.CardView
             android:id="@+id/cardViewQuestion3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            style="@style/CardViewStyle">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -149,7 +153,8 @@
         <android.support.v7.widget.CardView
             android:id="@+id/cardViewQuestion4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            style="@style/CardViewStyle">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -209,7 +214,8 @@
         <android.support.v7.widget.CardView
             android:id="@+id/cardViewQuestion5"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            style="@style/CardViewStyle">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -269,7 +275,8 @@
         <android.support.v7.widget.CardView
             android:id="@+id/cardViewQuestion6"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            style="@style/CardViewStyle">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -329,7 +336,8 @@
         <android.support.v7.widget.CardView
             android:id="@+id/cardViewQuestion7"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            style="@style/CardViewStyle">
 
             <LinearLayout
                 android:layout_width="match_parent"
