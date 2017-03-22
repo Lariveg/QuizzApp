@@ -16,6 +16,9 @@
     <string name="q6">6. "Stairway to Heaven" is a song by which rock band?</string>
     <string name="q7">7. Who wrote "Bohemian Rhapsody"?</string>
 
+    <!--Answer 1 editText-->
+    <string name="a1_editText">Jim Carrey</string>
+
     <!--Answer 2 checkbox-->
     <string name="a2_a_checkbox">Reservoir Dogs</string>
     <string name="a2_b_checkbox">The Bank Job</string>
@@ -45,5 +48,8 @@
     <string name="a6_b_checkbox">Led Zeppelin</string>
     <string name="a6_c_checkbox">Metallica</string>
     <string name="a6_d_checkbox">Guns N\'Roses</string>
+
+    <!--Answer 7 editText-->
+    <string name="a7_editText">Freddie Mercury</string>
 
 </resources>
