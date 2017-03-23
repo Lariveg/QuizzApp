@@ -1,6 +1,7 @@
 package com.example.android.quizzapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     int score = 0;
     int currentQuestion = 0;
+    CardView cardScore;
     CardView cardQuestion1;
     CardView cardQuestion2;
     CardView cardQuestion3;
@@ -27,17 +29,25 @@ public class MainActivity extends AppCompatActivity {
     CardView cardQuestion7;
     CardView[] cards;
     LinearLayout parentLayout;
+    TextView scoreTxtView;
+    Intent starterIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        starterIntent = getIntent();
         parentLayout = (LinearLayout) findViewById(R.id.parentLayout);
+        scoreTxtView = (TextView) findViewById(R.id.score_msg);
 
+        /**
+         * Set the font of the title.
+         */
         TextView titleText = (TextView)findViewById(R.id.quiz_title);
-        Typeface title_font = Typeface.createFromAsset(getAssets(),  "fonts/Princess-and-the-frog.ttf");
+        Typeface title_font = Typeface.createFromAsset(getAssets(),  "fonts/Aller_Bd.ttf");
         titleText.setTypeface(title_font);
 
+        cardScore = (CardView) findViewById(R.id.cardViewScore);
         cardQuestion1 = (CardView) findViewById(R.id.cardViewQuestion1);
         cardQuestion2 = (CardView) findViewById(R.id.cardViewQuestion2);
         cardQuestion3 = (CardView) findViewById(R.id.cardViewQuestion3);
@@ -51,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
         for(int i = 1; i < 7; i++){
             cards[i].setVisibility(View.GONE);
         }
+
+        cardScore.setVisibility(View.GONE);
 
         parentLayout.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -95,7 +107,19 @@ public class MainActivity extends AppCompatActivity {
     public void getScoreBtn(View v) {
         calculateScore();
         Toast.makeText(this, "Your score is " + score + " out of 7", Toast.LENGTH_SHORT).show();
+        cards[currentQuestion].setVisibility(View.GONE);
+        cardScore.setVisibility(View.VISIBLE);
+        scoreTxtView.setText("You scored " + score + " out of 7.");
     }
+
+    /**
+     * Reset app.
+     */
+    public void tryAgain(View v) {calculateScore();
+        finish();
+        startActivity(starterIntent);
+    }
+
 
     /**
      * Calculate the score.

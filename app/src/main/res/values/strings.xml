@@ -1,11 +1,13 @@
 <resources>
     <string name="app_name">Quiz App</string>
-    <string name="quiz_title">Fun Quiz</string>
+    <string name="quiz_title">Music &amp; Movie Quiz</string>
 
     <!--Buttons-->
     <string name="next_btn">Next</string>
     <string name="previous_btn">Previous</string>
     <string name="score_btn">Score</string>
+    <string name="try_again_btn">Try Again</string>
+
 
     <!--Questions-->
     <string name="q1">1. What is the name of the actor that had the main role in "Bruce Almighty"?</string>

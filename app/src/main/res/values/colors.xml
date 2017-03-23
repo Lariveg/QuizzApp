@@ -8,4 +8,6 @@
     <color name="questionBackground">#FF8A65</color>
     <color name="cardBackground">#FFF8E1</color>
 
+    <color name="btnTxtColor">#FFFFFF</color>
+
 </resources>
