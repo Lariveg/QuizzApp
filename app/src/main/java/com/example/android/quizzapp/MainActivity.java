@@ -1,17 +1,21 @@
 package com.example.android.quizzapp;
 
+import android.app.Activity;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
     int score = 0;
     int currentQuestion = 0;
     CardView cardQuestion1;
@@ -22,11 +26,13 @@ public class MainActivity extends AppCompatActivity {
     CardView cardQuestion6;
     CardView cardQuestion7;
     CardView[] cards;
+    LinearLayout parentLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        parentLayout = (LinearLayout) findViewById(R.id.parentLayout);
 
         TextView titleText = (TextView)findViewById(R.id.quiz_title);
         Typeface title_font = Typeface.createFromAsset(getAssets(),  "fonts/Princess-and-the-frog.ttf");
@@ -46,6 +52,21 @@ public class MainActivity extends AppCompatActivity {
             cards[i].setVisibility(View.GONE);
         }
 
+        parentLayout.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                hideKeyboard(view);
+            }
+        });
+
+    }
+
+    /**
+     * Show next Card/Question.
+     */
+    public void hideKeyboard(View view) {
+        InputMethodManager imm =(InputMethodManager)getSystemService(Activity.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
     /**
@@ -55,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
         cards[currentQuestion].setVisibility(View.GONE);
         currentQuestion+= 1;
         cards[currentQuestion].setVisibility(View.VISIBLE);
+        hideKeyboard(parentLayout);
     }
 
     /**
@@ -64,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
         cards[currentQuestion].setVisibility(View.GONE);
         currentQuestion-= 1;
         cards[currentQuestion].setVisibility(View.VISIBLE);
+        hideKeyboard(parentLayout);
     }
 
     /**
