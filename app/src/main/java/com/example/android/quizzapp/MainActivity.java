@@ -142,6 +142,8 @@ public class MainActivity extends AppCompatActivity {
         EditText a1EditText = (EditText) findViewById(R.id.a1);
         if (a1EditText.getText().toString().equals(getString(R.string.a1_editText))) {
             score += 1;
+        } else {
+            score += 0 ;
         }
     }
     /**
@@ -154,6 +156,8 @@ public class MainActivity extends AppCompatActivity {
         CheckBox a2CheckBoxD = (CheckBox) findViewById(R.id.a2_d_checkbox);
         if(a2CheckBoxA.isChecked() && a2CheckBoxC.isChecked() && !a2CheckBoxB.isChecked() && !a2CheckBoxD.isChecked()){
             score += 1;
+        } else {
+            score += 0 ;
         }
     }
 
@@ -167,6 +171,8 @@ public class MainActivity extends AppCompatActivity {
         CheckBox a3CheckBoxD = (CheckBox) findViewById(R.id.a3_d_checkbox);
         if(!a3CheckBoxA.isChecked() && a3CheckBoxC.isChecked() && a3CheckBoxB.isChecked() && !a3CheckBoxD.isChecked()){
             score += 1;
+        } else {
+            score += 0 ;
         }
     }
 
@@ -177,6 +183,8 @@ public class MainActivity extends AppCompatActivity {
         RadioButton a4RadioButtonD = (RadioButton) findViewById(R.id.a4_d_radio_button);
         if(a4RadioButtonD.isChecked()){
             score += 1;
+        } else {
+            score += 0 ;
         }
     }
 
@@ -187,6 +195,8 @@ public class MainActivity extends AppCompatActivity {
         RadioButton a5RadioButtonA = (RadioButton) findViewById(R.id.a5_a_radio_button);
         if(a5RadioButtonA.isChecked()){
             score += 1;
+        } else {
+            score += 0 ;
         }
     }
 
@@ -197,6 +207,8 @@ public class MainActivity extends AppCompatActivity {
         RadioButton a6RadioButtonB = (RadioButton) findViewById(R.id.a6_b_radio_button);
         if(a6RadioButtonB.isChecked()){
             score += 1;
+        } else {
+            score += 0 ;
         }
     }
 
@@ -207,6 +219,8 @@ public class MainActivity extends AppCompatActivity {
         EditText a7EditText = (EditText) findViewById(R.id.a7);
         if (a7EditText.getText().toString().equals(getString(R.string.a7_editText))) {
             score += 1;
+        } else {
+            score += 0 ;
         }
     }
 
